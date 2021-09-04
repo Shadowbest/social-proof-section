@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - GitHub repository: [This is the project repository](https://github.com/Shadowbest/social-proof-section)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Netlify: [Live Solution URL](https://condescending-volhard-217cac.netlify.app/)
 
 ## My process
 
