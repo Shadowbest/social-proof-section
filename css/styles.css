@@ -1,0 +1,201 @@
+/* FONTS IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+/* Variables */
+:root {
+  --very-dark-magenta: hsl(300deg, 43%, 22%);
+  --greyish-magenta: hsl(303deg, 10%, 53%);
+  --light-greyish-magenta: hsl(300deg, 24%, 96%);
+  --soft-pink: hsl(333deg, 80%, 67%);
+  --white: hsl(0deg, 0%, 100%);
+  --body-font-family: "Spartan", sans-serif;
+  --base-font-size: 0.9375rem;
+  --radius: 0.5rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 3rem 1rem 5rem;
+  font-family: var(--body-font-family);
+  font-size: var(--base-font-size);
+  line-height: 1.5;
+  background-image: 
+  url("../img/bg-pattern-top-mobile.svg"),
+  url("../img/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+  background-size: 100%, 100%;
+}
+
+main {
+  display: grid;
+  gap: 3rem;
+  max-width: 70rem;
+  text-align: center;
+}
+
+.page-title {
+  max-width: 14ch;
+  margin-right: auto;
+  margin-left: auto;
+  color: var(--very-dark-magenta);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lead {
+  color: var(--greyish-magenta);
+  font-size: var(--base-font-size);
+}
+
+.rating {
+  padding: 0.625rem 0;
+  background-color: var(--light-greyish-magenta);
+  border-radius: var(--radius);
+}
+
+.rating:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.rating .stars {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.rating .stars img {
+  display: inline-block;
+}
+
+.rating .rating-text {
+  margin: 0;
+  color: var(--very-dark-magenta);
+  font-size: 0.8125rem;
+}
+
+.reviews {
+  --spacer: 1.5rem;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--spacer);
+}
+
+.reviews li {
+  padding: 2rem;
+  background-color: var(--very-dark-magenta);
+  color: var(--light-greyish-magenta);
+  text-align: left;
+  border-radius: var(--radius);
+}
+
+.reviews .user-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacer);
+}
+
+.reviews p {
+  margin: 0;
+}
+
+.reviews .user {
+  font-weight: 500;
+}
+
+.reviews .status {
+  color: var(--soft-pink);
+  font-size: 0.875rem;
+}
+
+.reviews img {
+  --size: 2.5rem;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  margin-right: var(--spacer);
+}
+
+.reviews .quote {
+  font-size: 0.875rem;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 68.75em) {
+  body {
+    background-image: 
+    url("../img/bg-pattern-top-desktop.svg"),
+    url("../img/bg-pattern-bottom-desktop.svg");
+    background-position: top left, bottom right 30%;
+    background-size: 40%, 60% 90%;
+  }
+
+  main {
+    margin: auto;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .lead {
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
+  .ratings-container {
+    justify-self: center;
+    align-self: center;
+  }
+
+  .rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 3rem;
+  }
+  .rating .stars {
+    margin-bottom: 0;
+  }
+
+  .rating .rating-text {
+    margin-left: 2rem;
+  }
+
+  .reviews {
+    --spacer: 2rem;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .rating:first-child {
+    transform: translateX(-3rem);
+  }
+
+  .rating:last-child {
+    transform: translateX(3rem);
+  }
+
+  .reviews li:nth-child(2) {
+    transform: translateY(1rem);
+  }
+
+  .reviews li:last-child {
+    transform: translateY(2rem);
+  }
+}
